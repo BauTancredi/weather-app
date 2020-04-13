@@ -16,8 +16,8 @@ function App() {
   const { city, country } = search;
 
   useEffect(() => {
-    if (callApi) {
-      const fetchApi = async () => {
+    const fetchApi = async () => {
+      if (callApi) {
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${process.env.REACT_APP_API_KEY}`;
         const response = await fetch(url);
         const result = await response.json();
@@ -29,9 +29,10 @@ function App() {
         } else {
           setError(false);
         }
-      };
-      fetchApi();
-    }
+      }
+    };
+    fetchApi();
+    //eslint-disable-next-line
   }, [callApi]);
 
   let component;
