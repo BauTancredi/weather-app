@@ -1,10 +1,7 @@
 import React, { useState } from "react";
+import Error from "./Error";
 
-const Form = () => {
-  const [search, setSearch] = useState({
-    city: "",
-    country: "",
-  });
+const Form = ({ search, setSearch, setCallApi }) => {
   const [error, setError] = useState(false);
 
   const { city, country } = search;
@@ -23,13 +20,14 @@ const Form = () => {
       setError(true);
       return;
     }
+
+    setError(false);
+    setCallApi(true);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {error ? (
-        <p className="red darken-4 error">All fields are mandatory.</p>
-      ) : null}
+      \{error ? <Error message="Both fields are mandatory." /> : null}
       <div className="input-field col s12">
         <input
           type="text"
