@@ -5,7 +5,7 @@ Weather App
 <h2>
 Intro
 </h2>
-Breaking Bad API is a personal project developed with React. It allows you fetch the temperature of different cities in different countries.
+Weather App is a personal project developed with React. It allows you fetch the temperature of different cities in different countries.
 
 We use Hooks to control the flow of the props and the state of the app.
 We use https://api.openweathermap.org API for fetching the temperature of different cities.
